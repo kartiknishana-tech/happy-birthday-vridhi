@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Vridhi ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: "Segoe UI", sans-serif;
+            background:
+                radial-gradient(circle at 20% 20%, #ff7eb3 0%, transparent 30%),
+                radial-gradient(circle at 80% 80%, #ff4d6d 0%, transparent 30%),
+                linear-gradient(135deg, #16001f, #3b062d, #750b3c);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Dark romantic glow */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+            background-size: 35px 35px;
+            pointer-events: none;
+        }
+
+        /* Main container */
+        .container {
+            width: 90%;
+            max-width: 850px;
+            text-align: center;
+            position: relative;
+            z-index: 5;
+            padding: 40px 20px;
+        }
+
+        .small-text {
+            font-size: 18px;
+            letter-spacing: 5px;
+            color: #ffd6e7;
+            margin-bottom: 15px;
+            animation: fadeIn 2s ease;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(55px, 12vw, 110px);
+            font-weight: normal;
+            line-height: 1;
+            color: #fff;
+            text-shadow:
+                0 0 10px #ff8fab,
+                0 0 30px #ff4d6d,
+                0 0 60px #ff1744;
+            animation: glow 2.5s infinite alternate;
+        }
+
+        .birthday {
+            margin-top: 20px;
+            font-size: clamp(24px, 5vw, 40px);
+            font-family: Georgia, serif;
+            color: #ffe5ee;
+        }
+
+        .heart {
+            display: inline-block;
+            color: #ff4d6d;
+            animation: heartbeat 1.2s infinite;
+        }
+
+        /* Birthday card */
+        .card {
+            margin: 40px auto 25px;
+            padding: 35px;
+            max-width: 650px;
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 25px;
+            backdrop-filter: blur(15px);
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.35),
+                inset 0 0 30px rgba(255,255,255,0.05);
+            animation: cardAppear 1.5s ease;
+        }
+
+        .card p {
+            font-size: 19px;
+            line-height: 1.8;
+            color: #ffeaf2;
+        }
+
+        .highlight {
+            color: #ffb3c6;
+            font-weight: bold;
+        }
+
+        /* Button */
+        button {
+            border: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #ff416c, #ff4b8b);
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(255, 65, 108, 0.4);
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(255, 65, 108, 0.65);
+        }
+
+        /* Hidden message */
+        #surprise {
+            display: none;
+            margin-top: 30px;
+            animation: fadeIn 1s ease;
+        }
+
+        #surprise h2 {
+            font-family: Georgia, serif;
+            font-size: 34px;
+            color: #ffb6c9;
+            margin-bottom: 15px;
+        }
+
+        #surprise p {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        /* Floating hearts */
+        .floating-heart {
+            position: fixed;
+            bottom: -50px;
+            font-size: 25px;
+            animation: floatUp linear forwards;
+            opacity: 0.8;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Sparkles */
+        .sparkle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px white;
+            animation: twinkle 2s infinite alternate;
+            opacity: 0.7;
+        }
+
+        /* Animations */
+        @keyframes glow {
+            from {
+                text-shadow:
+                    0 0 10px #ff8fab,
+                    0 0 25px #ff4d6d;
+            }
+            to {
+                text-shadow:
+                    0 0 20px #ffb3c6,
+                    0 0 50px #ff1744,
+                    0 0 80px #ff1744;
+            }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.35);
+            }
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes cardAppear {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        @keyframes twinkle {
+            from {
+                transform: scale(0.5);
+                opacity: 0.2;
+            }
+            to {
+                transform: scale(1.5);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 25px 20px;
+            }
+
+            .card p {
+                font-size: 17px;
+            }
+
+            .small-text {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="small-text">
+            A LITTLE SOMETHING FOR
+        </div>
+
+        <h1>Vridhi</h1>
+
+        <div class="birthday">
+            Happy Birthday <span class="heart">♥</span>
+        </div>
+
+        <div class="card">
+
+            <p>
+                Today is not just another day...
+                <br><br>
+
+                It's the day the world got a little more beautiful
+                because <span class="highlight">you</span> were born.
+                ❤️
+                <br><br>
+
+                Vridhi, I hope your birthday is filled with
+                everything that makes you smile, everything that
+                makes your heart happy, and all the love you deserve.
+                <br><br>
+
+                <span class="highlight">
+                    May this year bring you countless reasons to smile,
+                    beautiful memories to keep, and dreams that come true.
+                </span>
+            </p>
+
+        </div>
+
+        <button onclick="showSurprise()">
+            💌 Open Your Surprise
+        </button>
+
+        <div id="surprise">
+
+            <h2>For You, Vridhi ❤️</h2>
+
+            <p>
+                If I could give you one thing today,
+                I would give you the ability to see yourself
+                through my eyes...
+                <br><br>
+
+                Because then you'd know just how special,
+                beautiful and precious you are to me.
+                <br><br>
+
+                Happy Birthday, Vridhi. 🎂❤️
+                <br>
+                Keep smiling. Always.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        /* Surprise message */
+        function showSurprise() {
+
+            document.getElementById("surprise").style.display = "block";
+
+            for (let i = 0; i < 25; i++) {
+                createHeart();
+            }
+
+            // Scroll smoothly to message
+            setTimeout(() => {
+                document.getElementById("surprise")
+                    .scrollIntoView({ behavior: "smooth" });
+            }, 200);
+        }
+
+
+        /* Floating hearts */
+        function createHeart() {
+
+            const heart = document.createElement("div");
+
+            heart.classList.add("floating-heart");
+
+            const hearts = ["❤️", "💕", "💗", "💖", "💘", "💞"];
+
+            heart.innerHTML =
+                hearts[Math.floor(Math.random() * hearts.length)];
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+            heart.style.fontSize =
+                (15 + Math.random() * 30) + "px";
+
+            heart.style.animationDuration =
+                (4 + Math.random() * 5) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 9000);
+        }
+
+
+        /* Continuously create hearts */
+        setInterval(createHeart, 700);
+
+
+        /* Create stars */
+        for (let i = 0; i < 45; i++) {
+
+            const sparkle = document.createElement("div");
+
+            sparkle.classList.add("sparkle");
+
+            sparkle.style.left =
+                Math.random() * 100 + "vw";
+
+            sparkle.style.top =
+                Math.random() * 100 + "vh";
+
+            sparkle.style.animationDelay =
+                Math.random() * 2 + "s";
+
+            document.body.appendChild(sparkle);
+        }
+
+    </script>
+
+</body>
+</html>
